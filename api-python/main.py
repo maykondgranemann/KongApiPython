@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import os
 
 # instanciar o flask
@@ -12,7 +12,7 @@ if not service_name:
 #criar uma rota
 @app.route('/')
 def main():
-    return service_name
+    return f'{service_name} \n request{request.headers} '
 
 #rodar a app
 if __name__ == "__main__":
